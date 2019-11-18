@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/electrofantasy.ogg-ada37092bc62772a71937051b42021c8.oggstr"
+
+[deps]
+
+source_file="res://Resources/Musics/electrofantasy.ogg"
+dest_files=[ "res://.import/electrofantasy.ogg-ada37092bc62772a71937051b42021c8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
