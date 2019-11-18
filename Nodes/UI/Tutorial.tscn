@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Fonts/JANCIENT.TTF" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=22]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=23]
+default_font = SubResource( 22 )
+
+[sub_resource type="StyleBoxEmpty" id=24]
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.470588 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.039
+anchor_top = 0.067
+anchor_right = 0.957
+anchor_bottom = 0.75
+margin_left = 50.064
+margin_top = -0.200001
+margin_right = -39.968
+margin_bottom = -3.05176e-05
+rect_clip_content = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 838.0
+margin_bottom = 820.0
+size_flags_horizontal = 3
+size_flags_vertical = 11
+alignment = 2
+
+[node name="TextEdit" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_right = 838.0
+margin_bottom = 820.0
+rect_min_size = Vector2( 0, 820 )
+size_flags_horizontal = 3
+size_flags_vertical = 11
+custom_styles/normal = SubResource( 24 )
+bbcode_enabled = true
+bbcode_text = "[color=#c6bdff]Sky Conquerors[/color] is minimalistic RTS (real time strategy) game set in a world populated by floating islands.
+You will have the opportunity to control the life of a new civilization, in an archipelago that will be procedurally generated every time you start a new game.
+Each island will offer some resources in a randomic amount, and eventually it will be inhabited by a hostile civilization.
+Conquer all islands to win, but pay attention to your resources!
+Floating islands do not have unlimited  forests or mines, so manage your resources in the best way you can do and move to other islands only when you feel ready.
+A mysterious fog will cover the view until you explore with your units, so always bring with you some soldiers.
+
+[center][color=#e59409]Controls[/color]
+[color=#5dffc4]Left Mouse Button[/color] - Select a Unit or a Structure
+[color=#5dffc4]Click and drag (left mouse button)[/color] - Area Selection
+[color=#5dffc4]Shift + Left Mouse Button[/color] - Multiple Unit Selection
+[color=#5dffc4]Right Mouse Button[/color] - Move Units or give orders (on a structure)
+[color=#5dffc4]ESC[/color] - Options
+[color=#5dffc4]WASD[/color] or [color=#5dffc4]Middle Mouse Button[/color] - Move the camera around
+[color=#5dffc4]Mouse Wheel Up/Down[/color] or [color=#5dffc4]Numpad + / -[/color] - Zoom in / Zoom out
+[/center]
+
+"
+text = "Sky Conquerors is minimalistic RTS (real time strategy) game set in a world populated by floating islands.
+You will have the opportunity to control the life of a new civilization, in an archipelago that will be procedurally generated every time you start a new game.
+Each island will offer some resources in a randomic amount, and eventually it will be inhabited by a hostile civilization.
+Conquer all islands to win, but pay attention to your resources!
+Floating islands do not have unlimited  forests or mines, so manage your resources in the best way you can do and move to other islands only when you feel ready.
+A mysterious fog will cover the view until you explore with your units, so always bring with you some soldiers.
+
+Controls
+Left Mouse Button - Select a Unit or a Structure
+Click and drag (left mouse button) - Area Selection
+Shift + Left Mouse Button - Multiple Unit Selection
+Right Mouse Button - Move Units or give orders (on a structure)
+ESC - Options
+WASD or Middle Mouse Button - Move the camera around
+Mouse Wheel Up/Down or Numpad + / - - Zoom in / Zoom out
+
+
+"
+scroll_active = false
+
+[node name="back" type="ToolButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -50.0
+margin_right = 72.0
+margin_bottom = -6.0
+custom_colors/font_color = Color( 1, 0.466667, 0.466667, 1 )
+text = "back"
+__meta__ = {
+"_edit_use_anchors_": false
+}

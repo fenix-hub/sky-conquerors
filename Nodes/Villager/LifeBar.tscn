@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Fonts/FTLTLT.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Resources/Imgs/villagers/villager.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 96, 32, 32 )
+
+[node name="LifeBar" type="TextureProgress"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -56.0
+margin_bottom = -48.0
+theme = SubResource( 5 )
+value = 50.0
+texture_under = SubResource( 6 )
+texture_progress = SubResource( 7 )
+nine_patch_stretch = true
+stretch_margin_left = 16
+stretch_margin_right = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}

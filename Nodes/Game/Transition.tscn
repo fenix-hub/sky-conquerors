@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Nodes/Game/Transition.gd" type="Script" id=1]
+[ext_resource path="res://Nodes/UI/TransitionBackground.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "transition"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop_process"
+}, {
+"args": [  ],
+"method": "change_scene"
+}, {
+"args": [  ],
+"method": "start_process"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TransitionBackground:material")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TransitionBackground:material:shader_param/cutoff")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5, 2 ),
+"transitions": PoolRealArray( 0.148651, 0.183011, 1 ),
+"update": 0,
+"values": [ 0.999, 0.0, 0.999 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TransitionBackground:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
+[node name="Transition" type="Control"]
+pause_mode = 2
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+mouse_default_cursor_shape = 4
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="TransitionBackground" parent="Viewport" instance=ExtResource( 2 )]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Viewport"]
+anims/transition = SubResource( 1 )
+[connection signal="animation_changed" from="Viewport/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_changed"]
+[connection signal="animation_finished" from="Viewport/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

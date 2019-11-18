@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Nodes/UI/GeneralButton.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=16]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0, 0, 0, 0.588235 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.184314, 0.172549, 0.321569, 1 )
+
+[node name="GeneralButton" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -600.0
+margin_right = 512.0
+margin_bottom = -560.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+custom_styles/panel = SubResource( 16 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GeneralButton" type="TextureButton" parent="."]
+margin_left = 8.0
+margin_top = 5.0
+margin_right = 1016.0
+margin_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
